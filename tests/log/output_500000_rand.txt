@@ -1,0 +1,56 @@
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 256.971 ms
+Comparisions: 29459205
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 241.058 ms
+Comparisions: 17398413
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 172.683 ms
+Comparisions: 8836889
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 110.247 ms
+Comparisions: 12596240
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 124.182 ms
+Comparisions: 12658558
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 20.7189 ms
+Comparisions: 999981
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 129.875 ms
+Comparisions: 499999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: tests/inp/input_500000_rand.txt
+-------------------------
+Running time: 44.0296 ms
+Comparisions: 1677424
+

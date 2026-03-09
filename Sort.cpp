@@ -449,7 +449,10 @@ pair<double, long long int> Sort(int a[], int n, string algorithm) {
     else if (algorithm == "binary-insertion-sort") comparisons = BinaryInsertionSort(a, n);
     else if (algorithm == "shaker-sort") comparisons = ShakerSort(a, n);
     else if (algorithm == "quick-sort") comparisons = QuickSort(a, 0, n - 1);
-    else if (algorithm == "randomized-quick-sort") comparisons = RandomizedQuickSort(a, 0, n - 1);
+    else if (algorithm == "randomized-quick-sort") {
+        pcg32_srandom((uint64_t)time(NULL), (uint64_t)&pcg32_global);
+        comparisons = RandomizedQuickSort(a, 0, n - 1);
+    }
     else if (algorithm == "shell-sort") comparisons = ShellSort(a, n);
     else if (algorithm == "heap-sort") comparisons = HeapSort(a, n);
     else if (algorithm == "merge-sort") comparisons = MergeSort(a, 0, n - 1);
@@ -510,11 +513,11 @@ int main(int argc, char const *argv[]) {
             string param = argv[4];
             cout << "-------------------------" << endl;
             if (param == "-both") {
-                cout << "Running time: " << runtime << endl;
+                cout << "Running time: " << runtime << " ms" << endl;
                 cout << "Comparisions: " << comparisons << endl;
             }
             else if (param == "-time") {
-                cout << "Running time: " << runtime << endl;
+                cout << "Running time: " << runtime << " ms" << endl;
             }
             else if (param == "-comp") {
                 cout << "Comparisions: " << comparisons << endl;
@@ -553,11 +556,11 @@ int main(int argc, char const *argv[]) {
             string param = argv[5];
             cout << "-------------------------" << endl;
             if (param == "-both") {
-                cout << "Running time: " << runtime << endl;
+                cout << "Running time: " << runtime << " ms" << endl;
                 cout << "Comparisions: " << comparisons << endl;
             }
             else if (param == "-time") {
-                cout << "Running time: " << runtime << endl;
+                cout << "Running time: " << runtime << " ms" << endl;
             }
             else if (param == "-comp") {
                 cout << "Comparisions: " << comparisons << endl;
@@ -566,9 +569,7 @@ int main(int argc, char const *argv[]) {
         }
         else 
             return 1;
-
     }
-
     return 0;
 }
 

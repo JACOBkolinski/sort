@@ -1,20 +1,24 @@
-#include <cstdlib>
-#include <string>
-#include <fstream>
+// for testing the sorting algorithms and generating input/output files only, not for command line usage
 
-#include "DataGenerator.hpp"
+#include "Sort.cpp"
+#include <fstream>
+#include <algorithm>
+#include <string>
 
 int main() {
-    int sizes[6] = {10000, 30000, 50000, 100000, 300000, 500000};
+    int sizes[] = {500000};
 
     std::string algorithms[] = {
         "selection-sort",
         "insertion-sort",
         "bubble-sort",
+        "binary-insertion-sort",
+        "shaker-sort",
+        "shell-sort",
         "heap-sort",
         "merge-sort",
         "quick-sort",
-        "randomized-quick-sort"
+        "randomized-quick-sort",
         "counting-sort",
         "radix-sort",
         "flash-sort",
@@ -27,45 +31,61 @@ int main() {
         "-rev"
     };
 
-    for (int size : sizes) {
-        int* a = new int[size];
-        ofstream fout_rand("tests/inp/input_" + std::to_string(size) + "_rand.txt");
-        GenerateData(a, size, 0);
-        fout_rand << size << endl;
-        for (int i = 0; i < size; i++) {
-            fout_rand << a[i] << " ";
+    for (auto& size : sizes) {
+        for (auto& order : orders) {
+
+            std::string input_path =
+                "tests/inp/input_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
+
+            std::string output_path =
+                "tests/out/output_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
+
+            std::ofstream input_file(input_path);
+            std::ofstream output_file(output_path);
+
+            int* original = new int[size];
+
+            if (order == "-rand") {
+                GenerateData(original, size, 0);
+            }
+            else if (order == "-sorted") {
+                GenerateData(original, size, 1);
+            }
+            else if (order == "-rev") {
+                GenerateData(original, size, 2);
+            }
+            else if (order == "-nsorted") {
+                GenerateData(original, size, 3);
+            }
+
+            input_file << size << '\n';
+            for (int i = 0; i < size; i++) {
+                input_file << original[i] << ' ';
+            }
+            input_file << '\n';
+
+            for (auto& algorithm : algorithms) {
+
+                int* a = new int[size];
+                std::copy(original, original + size, a);
+
+                auto result = Sort(a, size, algorithm);
+                auto runtime = result.first;
+                auto comparisons = result.second;
+
+                output_file << "ALGORITHM MODE\n";
+                output_file << "Algorithm: " << algorithm << '\n';
+                output_file << "Input file: " << input_path << '\n';
+                output_file << "-------------------------\n";
+                output_file << "Running time: " << runtime << " ms\n";
+                output_file << "Comparisions: " << comparisons << "\n\n";
+
+                delete[] a;
+            }
+
+            delete[] original;
         }
-        ofstream fout_nsorted("tests/inp/input_" + std::to_string(size) + "_nsorted.txt");
-        GenerateData(a, size, 3);
-        fout_nsorted << size << endl;
-        for (int i = 0; i < size; i++) {
-            fout_nsorted << a[i] << " ";
-        }
-        ofstream fout_sorted("tests/inp/input_" + std::to_string(size) + "_sorted.txt");
-        GenerateData(a, size, 1);
-        fout_sorted << size << endl;
-        for (int i = 0; i < size; i++) {
-            fout_sorted << a[i] << " ";
-        }
-        ofstream fout_rev("tests/inp/input_" + std::to_string(size) + "_rev.txt");
-        GenerateData(a, size, 2);
-        fout_rev << size << endl;
-        for (int i = 0; i < size; i++) {
-            fout_rev << a[i] << " ";
-        }
-        delete[] a;
     }
 
-    for (int size : sizes) {
-        for (std::string order : orders) {
-            for (std::string algorithm : algorithms) {
-                std::string cmd = "./Sort -a " + algorithm + " tests/inp/input_" + std::to_string(size) + "_" + order.substr(1) + ".txt -both >> tests/log/output_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
-                std::string newline = "echo >> tests/log/output_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
-                system(newline.c_str());
-                system(cmd.c_str());
-            }
-        }
-    }
-    
-    
+    return 0;
 }

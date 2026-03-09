@@ -1,0 +1,104 @@
+
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 110921 ms
+Comparisions: 44999850000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 1.33458 ms
+Comparisions: 299999
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 0.930746 ms
+Comparisions: 299999
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 24.5671 ms
+Comparisions: 5175713
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 1.62762 ms
+Comparisions: 599997
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 25.6368 ms
+Comparisions: 5100008
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 98.4056 ms
+Comparisions: 10279749
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 59.7513 ms
+Comparisions: 2797264
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 11.998 ms
+Comparisions: 5213588
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 26.4542 ms
+Comparisions: 6990461
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 11.2305 ms
+Comparisions: 599998
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 78.0465 ms
+Comparisions: 299999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: tests/inp/input_300000_sorted.txt
+Input size: 300000
+-------------------------
+Running time: 13.0238 ms
+Comparisions: 1070996

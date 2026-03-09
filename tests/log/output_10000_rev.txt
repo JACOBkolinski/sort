@@ -1,0 +1,104 @@
+
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 140.643 ms
+Comparisions: 49995000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 169.206 ms
+Comparisions: 49995000
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 386.778 ms
+Comparisions: 49995000
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 118.407 ms
+Comparisions: 113631
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 439.412 ms
+Comparisions: 49995000
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 0.865866 ms
+Comparisions: 172578
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 2.40586 ms
+Comparisions: 226682
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 1.5931 ms
+Comparisions: 64608
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 0.326817 ms
+Comparisions: 125452
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 0.861021 ms
+Comparisions: 164645
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 0.352697 ms
+Comparisions: 9999
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 1.71614 ms
+Comparisions: 9999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: tests/inp/input_10000_rev.txt
+Input size: 10000
+-------------------------
+Running time: 0.417695 ms
+Comparisions: 24248
