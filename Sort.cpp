@@ -1,12 +1,14 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
+#include <utility>
+#include <string>
+#include <chrono>
 
 #include "DataGenerator.hpp"
 #include "RandomGenerator.hpp"
 
-int Heapify(int a[], int n, int root) {
-    int count = 0;
+long long int Heapify(int a[], int n, int root) {
+    long long int count = 0;
 
     while (true) {
         int largest = root;
@@ -32,8 +34,8 @@ int Heapify(int a[], int n, int root) {
     return count;
 }
 
-int Merge(int a[], int l, int mid, int r) {
-    int count = 0;
+long long int Merge(int a[], int l, int mid, int r) {
+    long long int count = 0;
 
     int n1 = mid - l + 1;
     int n2 = r - mid;
@@ -70,8 +72,8 @@ int Merge(int a[], int l, int mid, int r) {
 }
 
 //lttung@fit.hcmus.edu.vn
-int SelectionSort(int a[], int n) {
-    int count = 0;
+long long int SelectionSort(int a[], int n) {
+    long long int count = 0;
     for (int i = 0; i < n - 1; i++) {
         int min = i;
         for (int j = i + 1; j < n; j++) {
@@ -86,8 +88,8 @@ int SelectionSort(int a[], int n) {
 }
 
 //lttung@fit.hcmus.edu.vn
-int InsertionSort(int a[], int n) {
-    int count = 0;
+long long int InsertionSort(int a[], int n) {
+    long long int count = 0;
     for (int i = 1; i < n; i++) {
         int key = a[i], j = i - 1;
         while(j >= 0) {
@@ -104,8 +106,8 @@ int InsertionSort(int a[], int n) {
 }
 
 //lttung@fit.hcmus.edu.vn
-int BubbleSort(int a[], int n) {
-    int count = 0;
+long long int BubbleSort(int a[], int n) {
+    long long int count = 0;
     for (int i = 0; i < n - 1; i++) {
         bool swapped = false;
         for (int j = 0; j < n - i - 1; j++) {
@@ -121,8 +123,8 @@ int BubbleSort(int a[], int n) {
 }
 
 //lttung@fit.hcmus.edu.vn
-int BinaryInsertionSort(int a[], int n) {
-    int count = 0;
+long long int BinaryInsertionSort(int a[], int n) {
+    long long int count = 0;
     for (int i = 1; i < n; i++) {
         int l = 0, r = i - 1, pos = i, key = a[i];
         while (l <= r) {
@@ -145,8 +147,8 @@ int BinaryInsertionSort(int a[], int n) {
 }
 
 //lttung@fit.hcmus.edu.vn
-int ShakerSort(int a[], int n) {
-    int count = 0;
+long long int ShakerSort(int a[], int n) {
+    long long int count = 0;
     int left = 0;
     int right = n - 1;
 
@@ -174,55 +176,61 @@ int ShakerSort(int a[], int n) {
 }
 
 //https://www.geeksforgeeks.org/dsa/quick-sort/
-int QuickSort(int a[], int l, int r) {
-    int count = 0;
+long long QuickSort(int a[], int l, int r) {
+    long long count = 0;
+
     int pivot = a[(l + r) / 2];
     int i = l, j = r;
 
-    while (l <= r) {
-        while (true) {
+    while (i <= j) {
+        while (a[i] < pivot) {
             count++;
-            if (!(a[l] < pivot)) break;
-            l++;
+            i++;
         }
-        while (true) {
+        count++;
+
+        while (a[j] > pivot) {
             count++;
-            if (!(a[r] > pivot)) break;
-            r--;
+            j--;
         }
-        if (l <= r) {
-            HoanVi(a[l], a[r]);
-            l++;
-            r--;
+        count++;
+
+        if (i <= j) {
+            HoanVi(a[i], a[j]);
+            i++;
+            j--;
         }
     }
 
-    if (i < r) count += QuickSort(a, i, r);
     if (l < j) count += QuickSort(a, l, j);
+    if (i < r) count += QuickSort(a, i, r);
+
     return count;
 }
 
 //https://viblo.asia/p/thuat-toan-sap-xep-nhanh-quick-sort-eW65G6ROlDO
-int RandomizedQuickSort(int a[], int l, int r) {
-    int count = 0;
+long long int RandomizedQuickSort(int a[], int l, int r) {
+    long long int count = 0;
     int pivot = a[pcg32_boundedrand(r - l + 1) + l];
     int i = l, j = r;
 
-    while (l <= r) {
-        while (true) {
+    while (i <= j) {
+        while (a[i] < pivot) {
             count++;
-            if (!(a[l] < pivot)) break;
-            l++;
+            i++;
         }
-        while (true) {
+        count++;
+
+        while (a[j] > pivot) {
             count++;
-            if (!(a[r] > pivot)) break;
-            r--;
+            j--;
         }
-        if (l <= r) {
-            HoanVi(a[l], a[r]);
-            l++;
-            r--;
+        count++;
+
+        if (i <= j) {
+            HoanVi(a[i], a[j]);
+            i++;
+            j--;
         }
     }
 
@@ -232,8 +240,8 @@ int RandomizedQuickSort(int a[], int l, int r) {
 }
 
 //https://www.geeksforgeeks.org/dsa/shell-sort/
-int ShellSort(int a[], int n) {
-    int count = 0;
+long long int ShellSort(int a[], int n) {
+    long long int count = 0;
     for (int gap = n / 2; gap > 0; gap /= 2) {
         for (int i = gap; i < n; i++) {
             int temp = a[i];
@@ -253,8 +261,8 @@ int ShellSort(int a[], int n) {
 }
 
 //https://www.geeksforgeeks.org/dsa/heap-sort/
-int HeapSort(int a[], int n) {
-    int count = 0;
+long long int HeapSort(int a[], int n) {
+    long long int count = 0;
 
     for (int start = n / 2 - 1; start >= 0; start--) {
         count += Heapify(a, n, start);
@@ -268,8 +276,8 @@ int HeapSort(int a[], int n) {
 }
 
 //https://www.geeksforgeeks.org/dsa/merge-sort/
-int MergeSort(int a[], int l, int r) {
-    int count = 0;
+long long int MergeSort(int a[], int l, int r) {
+    long long int count = 0;
 
     if (l < r) {
         int mid = (l + r) / 2;
@@ -284,8 +292,8 @@ int MergeSort(int a[], int l, int r) {
 }
 
 //https://www.geeksforgeeks.org/dsa/counting-sort/
-int CountingSort(int a[], int n) {
-    int count = 0;
+long long int CountingSort(int a[], int n) {
+    long long int count = 0;
     if (n <= 0) return count;
 
     int minVal = a[0], maxVal = a[0];
@@ -325,8 +333,8 @@ int CountingSort(int a[], int n) {
 }
 
 //https://www.geeksforgeeks.org/dsa/radix-sort/
-int RadixSort(int a[], int n) {
-    int count = 0;
+long long int RadixSort(int a[], int n) {
+    long long int count = 0;
     if (n <= 0) return count;
 
     int maxVal = a[0];
@@ -362,8 +370,8 @@ int RadixSort(int a[], int n) {
 }
 
 //https://neubert.net/FSOIntro.html
-int FlashSort(int a[], int n) {
-    int count = 0;
+long long int FlashSort(int a[], int n) {
+    long long int count = 0;
     if (n <= 1) return count;
 
     int m = (int)(0.43 * n);
@@ -430,32 +438,137 @@ int FlashSort(int a[], int n) {
     return count;
 }
 
+pair<double, long long int> Sort(int a[], int n, string algorithm) {
+    long long int comparisons = 0;
+
+    auto start = chrono::high_resolution_clock::now();
+
+    if (algorithm == "selection-sort") comparisons = SelectionSort(a, n);
+    else if (algorithm == "insertion-sort") comparisons = InsertionSort(a, n);
+    else if (algorithm == "bubble-sort") comparisons = BubbleSort(a, n);
+    else if (algorithm == "binary-insertion-sort") comparisons = BinaryInsertionSort(a, n);
+    else if (algorithm == "shaker-sort") comparisons = ShakerSort(a, n);
+    else if (algorithm == "quick-sort") comparisons = QuickSort(a, 0, n - 1);
+    else if (algorithm == "randomized-quick-sort") comparisons = RandomizedQuickSort(a, 0, n - 1);
+    else if (algorithm == "shell-sort") comparisons = ShellSort(a, n);
+    else if (algorithm == "heap-sort") comparisons = HeapSort(a, n);
+    else if (algorithm == "merge-sort") comparisons = MergeSort(a, 0, n - 1);
+    else if (algorithm == "counting-sort") comparisons = CountingSort(a, n);
+    else if (algorithm == "radix-sort") comparisons = RadixSort(a, n);
+    else if (algorithm == "flash-sort") comparisons = FlashSort(a, n);
+
+    auto end = chrono::high_resolution_clock::now();
+
+    double runtime = chrono::duration<double, milli>(end - start).count();
+
+    return {runtime, comparisons};
+}
+
+void ReadInput(const string& filename, int*& a, int& n) {
+    ifstream fin(filename);
+    
+    fin >> n;
+    a = new int[n];
+    for (int i = 0; i < n; i++)
+        fin >> a[i];
+    
+    fin.close();
+}
+void WriteOutput(const string& filename, int a[], int n) {
+    ofstream fout(filename);
+    
+    fout << n << endl;
+    for (int i = 0; i < n; i++)
+        fout << a[i] << " ";
+    
+    fout.close();
+}
+
+using namespace std;
+
 int main(int argc, char const *argv[]) {
-    // MARK: IMPORTANCE
-    // use pcg32_srandom((uint64_t)time(NULL), (uint64_t)&pcg32_global) to seed the random generator when calling RandomizedQuickSort
+    if (argc < 2) return 1;
 
-    // if (argc < 5) return 1;
+    string mode = argv[1];
 
-    // string mode = argv[1];
+    if (mode == "-a") {
+        string algorithm = argv[2];
 
-    // if (mode == "-a") {
-    //     // Xử lý ALGORITHM MODE
-    //     string algorithm = argv[2];
-        
-    //     // Command 1: [exe] -a algorithm input.txt output_param
-    //     if (argc == 5 && string(argv[3]).find(".txt") != string::npos) {
-    //         int n;
-    //         int* a = readArrayFromFile(argv[3], n);
-    //         auto res = runSort(algorithm, a, n);
-    //         // In kết quả theo output_param (argv[4])
-    //         delete[] a;
-    //     }
-        
-    //     // Command 2 & 3 xử lý dựa trên việc có Input_order hay không
-    //     // Command 2: [exe] -a algorithm size order output_param (argc == 6)
-    //     // Command 3: [exe] -a algorithm size output_param (argc == 5)
-    // }
+        if (argc == 5) {
+            string inputFile = argv[3];
+            int* a, n;
 
-    // return 0;
+            ReadInput(inputFile, a, n);
+            auto [runtime, comparisons] = Sort(a, n, algorithm);
+            WriteOutput("output.txt", a, n);
+
+            cout << "ALGORITHM MODE" << endl;
+            cout << "Algorithm: " << algorithm << endl;
+            cout << "Input file: " << inputFile << endl;
+            cout << "Input size: " << n << endl;
+
+            string param = argv[4];
+            cout << "-------------------------" << endl;
+            if (param == "-both") {
+                cout << "Running time: " << runtime << endl;
+                cout << "Comparisions: " << comparisons << endl;
+            }
+            else if (param == "-time") {
+                cout << "Running time: " << runtime << endl;
+            }
+            else if (param == "-comp") {
+                cout << "Comparisions: " << comparisons << endl;
+            }
+            delete[] a;
+        }
+        else if (argc == 6) {
+            int n = stoi(argv[3]);
+            int* a = new int[n];
+
+            string gen = argv[4];
+
+            if (gen == "-rand") {
+                GenerateData(a, n, 0);
+            }
+            else if (gen == "-nsorted") {
+                GenerateData(a, n, 3);
+            }
+            else if (gen == "-sorted") {
+                GenerateData(a, n, 1);
+
+            }
+            else if (gen == "-rev") {
+                GenerateData(a, n, 2);
+            }
+
+            WriteOutput("input.txt", a, n);
+            auto [runtime, comparisons] = Sort(a, n, algorithm);
+            WriteOutput("output.txt", a, n);
+
+            cout << "ALGORITHM MODE" << endl;
+            cout << "Algorithm: " << algorithm << endl;
+            cout << "Input size: " << n << endl;
+            cout << "Input order: " << gen << endl;
+
+            string param = argv[5];
+            cout << "-------------------------" << endl;
+            if (param == "-both") {
+                cout << "Running time: " << runtime << endl;
+                cout << "Comparisions: " << comparisons << endl;
+            }
+            else if (param == "-time") {
+                cout << "Running time: " << runtime << endl;
+            }
+            else if (param == "-comp") {
+                cout << "Comparisions: " << comparisons << endl;
+            }
+            delete[] a;
+        }
+        else 
+            return 1;
+
+    }
+
+    return 0;
 }
 
