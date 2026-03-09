@@ -1,4 +1,3 @@
-
 ALGORITHM MODE
 Algorithm: selection-sort
 Input file: tests/inp/input_50000_sorted.txt
