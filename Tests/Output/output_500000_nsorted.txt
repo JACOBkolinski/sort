@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 148751 ms
+Comparisions: 124999750000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 5.95827 ms
+Comparisions: 3079687
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 121427 ms
+Comparisions: 91717104997
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 22.0344 ms
+Comparisions: 8858430
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 14.0015 ms
+Comparisions: 5999922
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 21.2996 ms
+Comparisions: 9412839
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 81.4315 ms
+Comparisions: 17831722
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 41.3233 ms
+Comparisions: 5377314
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 8.98947 ms
+Comparisions: 8475700
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 19.4207 ms
+Comparisions: 11590827
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 6.54298 ms
+Comparisions: 999998
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 58.7452 ms
+Comparisions: 499999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_500000_nsorted.txt
+-------------------------
+Running time: 9.44539 ms
+Comparisions: 1784992
+

@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 58.3759 ms
+Comparisions: 49995000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.115868 ms
+Comparisions: 59321
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 62.1586 ms
+Comparisions: 47339640
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.342574 ms
+Comparisions: 121606
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.257647 ms
+Comparisions: 119922
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.319386 ms
+Comparisions: 132250
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 1.34271 ms
+Comparisions: 244477
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.705471 ms
+Comparisions: 84645
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.143106 ms
+Comparisions: 113595
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.359895 ms
+Comparisions: 151969
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.10616 ms
+Comparisions: 19998
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.763999 ms
+Comparisions: 9999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_10000_nsorted.txt
+-------------------------
+Running time: 0.198071 ms
+Comparisions: 35691
+

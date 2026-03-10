@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 547.771 ms
+Comparisions: 449985000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 368.341 ms
+Comparisions: 226702340
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 1593.38 ms
+Comparisions: 449963679
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 265.635 ms
+Comparisions: 404680
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 1354.58 ms
+Comparisions: 338927844
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 4.65642 ms
+Comparisions: 997110
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 4.43097 ms
+Comparisions: 800787
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 3.81287 ms
+Comparisions: 408537
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 2.52806 ms
+Comparisions: 353226
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 2.8735 ms
+Comparisions: 356626
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 0.438606 ms
+Comparisions: 59991
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 2.92895 ms
+Comparisions: 29999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_30000_rand.txt
+-------------------------
+Running time: 0.655954 ms
+Comparisions: 100524
+

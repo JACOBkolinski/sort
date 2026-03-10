@@ -6,7 +6,7 @@
 #include <string>
 
 int main() {
-    int sizes[] = {500000};
+    int sizes[] = {10000, 30000, 50000, 100000, 300000, 500000};
 
     std::string algorithms[] = {
         "selection-sort",
@@ -35,10 +35,10 @@ int main() {
         for (auto& order : orders) {
 
             std::string input_path =
-                "tests/inp/input_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
+                "Tests/Input/input_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
 
             std::string output_path =
-                "tests/out/output_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
+                "Tests/Output/output_" + std::to_string(size) + "_" + order.substr(1) + ".txt";
 
             std::ofstream input_file(input_path);
             std::ofstream output_file(output_path);

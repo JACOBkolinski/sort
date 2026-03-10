@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 603.662 ms
+Comparisions: 449985000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 721.576 ms
+Comparisions: 449985000
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 1674.28 ms
+Comparisions: 449985000
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 494.097 ms
+Comparisions: 387248
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 1647.43 ms
+Comparisions: 449985000
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 1.26043 ms
+Comparisions: 567016
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 3.8209 ms
+Comparisions: 775687
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 2.20337 ms
+Comparisions: 219504
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 0.471711 ms
+Comparisions: 357262
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 1.09149 ms
+Comparisions: 478064
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 0.422961 ms
+Comparisions: 29999
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 2.87915 ms
+Comparisions: 29999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_30000_rev.txt
+-------------------------
+Running time: 0.530099 ms
+Comparisions: 72748
+

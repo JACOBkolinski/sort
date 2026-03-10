@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 536.773 ms
+Comparisions: 449985000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.060692 ms
+Comparisions: 29999
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.039949 ms
+Comparisions: 29999
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.969962 ms
+Comparisions: 417233
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.063417 ms
+Comparisions: 59997
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.86052 ms
+Comparisions: 390007
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 4.04335 ms
+Comparisions: 826347
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 2.18647 ms
+Comparisions: 227728
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.43686 ms
+Comparisions: 387248
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 1.08422 ms
+Comparisions: 535709
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.449501 ms
+Comparisions: 59998
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 2.96904 ms
+Comparisions: 29999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_30000_sorted.txt
+-------------------------
+Running time: 0.593096 ms
+Comparisions: 107096
+

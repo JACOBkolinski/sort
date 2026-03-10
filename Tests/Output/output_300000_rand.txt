@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 52988.9 ms
+Comparisions: 44999850000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 38305.9 ms
+Comparisions: 22550878784
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 226009 ms
+Comparisions: 44998616765
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 26488.9 ms
+Comparisions: 5041516
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 150793 ms
+Comparisions: 33838250655
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 68.3022 ms
+Comparisions: 15433497
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 57.9292 ms
+Comparisions: 10000974
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 44.7734 ms
+Comparisions: 5084626
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 30.2429 ms
+Comparisions: 4357514
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 33.4521 ms
+Comparisions: 4442066
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 5.95449 ms
+Comparisions: 599987
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 35.0636 ms
+Comparisions: 299999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_300000_rand.txt
+-------------------------
+Running time: 11.2962 ms
+Comparisions: 1006960
+

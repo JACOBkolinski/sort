@@ -1,0 +1,91 @@
+ALGORITHM MODE
+Algorithm: selection-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 55285.8 ms
+Comparisions: 44999850000
+
+ALGORITHM MODE
+Algorithm: insertion-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 78777.4 ms
+Comparisions: 44999850000
+
+ALGORITHM MODE
+Algorithm: bubble-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 187562 ms
+Comparisions: 44999850000
+
+ALGORITHM MODE
+Algorithm: binary-insertion-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 53041 ms
+Comparisions: 4875732
+
+ALGORITHM MODE
+Algorithm: shaker-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 178906 ms
+Comparisions: 44999850000
+
+ALGORITHM MODE
+Algorithm: shell-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 16.9739 ms
+Comparisions: 7300919
+
+ALGORITHM MODE
+Algorithm: heap-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 43.8105 ms
+Comparisions: 9740640
+
+ALGORITHM MODE
+Algorithm: merge-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 25.6256 ms
+Comparisions: 2678448
+
+ALGORITHM MODE
+Algorithm: quick-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 5.74308 ms
+Comparisions: 4575750
+
+ALGORITHM MODE
+Algorithm: randomized-quick-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 12.4661 ms
+Comparisions: 6385612
+
+ALGORITHM MODE
+Algorithm: counting-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 4.13358 ms
+Comparisions: 299999
+
+ALGORITHM MODE
+Algorithm: radix-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 35.246 ms
+Comparisions: 299999
+
+ALGORITHM MODE
+Algorithm: flash-sort
+Input file: Tests/Input/input_300000_rev.txt
+-------------------------
+Running time: 5.57707 ms
+Comparisions: 727498
+

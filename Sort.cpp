@@ -187,13 +187,11 @@ long long QuickSort(int a[], int l, int r) {
             count++;
             i++;
         }
-        count++;
 
         while (a[j] > pivot) {
             count++;
             j--;
         }
-        count++;
 
         if (i <= j) {
             HoanVi(a[i], a[j]);
@@ -219,13 +217,11 @@ long long int RandomizedQuickSort(int a[], int l, int r) {
             count++;
             i++;
         }
-        count++;
 
         while (a[j] > pivot) {
             count++;
             j--;
         }
-        count++;
 
         if (i <= j) {
             HoanVi(a[i], a[j]);
