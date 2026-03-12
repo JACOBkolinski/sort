@@ -475,97 +475,248 @@ void ReadInput(const string& filename, int*& a, int& n) {
 }
 void WriteOutput(const string& filename, int a[], int n) {
     ofstream fout(filename);
-    
+
     fout << n << endl;
     for (int i = 0; i < n; i++)
         fout << a[i] << " ";
-    
+
+    fout.close();
+}
+
+void WriteInput(const string& filename, int a[], int n) {
+    ofstream fout(filename);
+
+    fout << n << endl;
+    for (int i = 0; i < n; i++)
+        fout << a[i] << " ";
+
     fout.close();
 }
 
 using namespace std;
 
+int getDataType(const string& order) {
+    if (order == "-sorted") return 1;
+    if (order == "-nsorted") return 3;
+    if (order == "-rev") return 2;
+    if (order == "-rand") return 0;
+    return -1;
+}
+
+void printOutput(double time, long long int comps, const string& outputParam) {
+    if (outputParam == "-time") {
+        cout << "Running time: " << time << " ms" << endl;
+    } else if (outputParam == "-comp") {
+        cout << "Comparisions: " << comps << endl;
+    } else if (outputParam == "-both") {
+        cout << "Running time: " << time << " ms" << endl;
+        cout << "Comparisions: " << comps << endl;
+    }
+}
+
+void command1(const string& algorithm, const string& inputFile, const string& outputParam) {
+    int* a = nullptr;
+    int n = 0;
+    ReadInput(inputFile, a, n);
+
+    int* b = new int[n];
+    for (int i = 0; i < n; i++) b[i] = a[i];
+
+    auto result = Sort(b, n, algorithm);
+
+    cout << "ALGORITHM MODE\n";
+    cout << "Algorithm: " << algorithm << "\n";
+    cout << "Input file: " << inputFile << "\n";
+    cout << "Input size: " << n << "\n";
+    cout << "-------------------------\n";
+    printOutput(result.first, result.second, outputParam);
+
+    WriteOutput("output.txt", b, n);
+
+    delete[] a;
+    delete[] b;
+}
+
+void command2(const string& algorithm, int size, const string& order, const string& outputParam) {
+    int* a = new int[size];
+    int dataType = getDataType(order);
+    GenerateData(a, size, dataType);
+
+    WriteInput("input.txt", a, size);
+
+    int* b = new int[size];
+    for (int i = 0; i < size; i++) b[i] = a[i];
+
+    auto result = Sort(b, size, algorithm);
+
+    cout << "ALGORITHM MODE\n";
+    cout << "Algorithm: " << algorithm << "\n";
+    cout << "Input size: " << size << "\n";
+    cout << "Input order: " << order << "\n";
+    cout << "-------------------------\n";
+    printOutput(result.first, result.second, outputParam);
+
+    WriteOutput("output.txt", b, size);
+
+    delete[] a;
+    delete[] b;
+}
+
+void command3(const string& algorithm, int size, const string& outputParam) {
+    string inputFiles[] = {"input_1.txt", "input_2.txt", "input_3.txt", "input_4.txt"};
+    int dataTypes[] = {0, 3, 1, 2}; 
+
+    for (int i = 0; i < 4; i++) {
+        int* a = new int[size];
+        GenerateData(a, size, dataTypes[i]);
+        WriteInput(inputFiles[i], a, size);
+        delete[] a;
+    }
+
+    cout << "ALGORITHM MODE\n";
+    cout << "Algorithm: " << algorithm << "\n";
+    cout << "Input size: " << size << "\n";
+    cout << "\n";
+
+    for (int i = 0; i < 4; i++) {
+        int* a = nullptr;
+        int n = 0;
+        ReadInput(inputFiles[i], a, n);
+
+        int* b = new int[n];
+        for (int j = 0; j < n; j++) b[j] = a[j];
+
+        auto result = Sort(b, n, algorithm);
+
+
+        if (i == 0) cout << "Input order: -rand" << endl;
+        else if (i == 1) cout << "Input order: -nsorted" << endl;
+        else if (i == 2) cout << "Input order: -sorted" << endl;
+        else if (i == 3) cout << "Input order: -rev" << endl;
+        cout << "-------------------------\n";
+
+        printOutput(result.first, result.second, outputParam);
+        cout << endl;
+
+        delete[] a;
+        delete[] b;
+    }
+}
+
+void command4(const string& algorithm1, const string& algorithm2, const string& inputFile) {
+    int* a = nullptr;
+    int n = 0;
+    ReadInput(inputFile, a, n);
+
+    int* b1 = new int[n];
+    for (int i = 0; i < n; i++) b1[i] = a[i];
+    auto result1 = Sort(b1, n, algorithm1);
+
+    int* b2 = new int[n];
+    for (int i = 0; i < n; i++) b2[i] = a[i];
+    auto result2 = Sort(b2, n, algorithm2);
+
+    cout << "Algorithm: " << algorithm1 << " | " << algorithm2 << endl;
+    cout << "Input file: " << inputFile << endl;
+    cout << "Input size: " << n << endl;
+    cout << "-------------------------\n";
+    cout << "Running time: " << result1.first << " ms | " << result2.first << " ms" << endl;
+    cout << "Comparisions: " << result1.second << " | " << result2.second << endl;
+
+    delete[] a;
+    delete[] b1;
+    delete[] b2;
+}
+
+void command5(const string& algorithm1, const string& algorithm2, int size, const string& order) {
+    int* a = new int[size];
+    int dataType = getDataType(order);
+    GenerateData(a, size, dataType);
+
+    WriteInput("input.txt", a, size);
+
+    int* b1 = new int[size];
+    for (int i = 0; i < size; i++) b1[i] = a[i];
+    auto result1 = Sort(b1, size, algorithm1);
+
+    int* b2 = new int[size];
+    for (int i = 0; i < size; i++) b2[i] = a[i];
+    auto result2 = Sort(b2, size, algorithm2);
+
+    cout << "Algorithm: " << algorithm1 << " | " << algorithm2 << endl;
+    cout << "Input size: " << size << endl;
+    cout << "Input order: ";
+    if (order == "-rand") cout << "Random" << endl;
+    else if (order == "-sorted") cout << "Sorted" << endl;
+    else if (order == "-nsorted") cout << "Nearly Sorted" << endl;
+    else if (order == "-rev") cout << "Reversed" << endl;
+    cout << "-------------------------\n";
+    cout << "Running time: " << result1.first << " ms | " << result2.first << " ms" << endl;
+    cout << "Comparisons: " << result1.second << " | " << result2.second << endl;
+
+    delete[] a;
+    delete[] b1;
+    delete[] b2;
+}
+
 int main(int argc, char const *argv[]) {
-    if (argc < 2) return 1;
+    if (argc < 2) {
+        cout << "USAGE:\n";
+        cout << "    " << argv[0] << " -a Algorithm Input_file Output_parameter" << endl;
+        cout << "    " << argv[0] << " -a Algorithm Input_size Input_order Output_parameter" << endl;
+        cout << "    " << argv[0] << " -a Algorithm Input_size Output_parameter" << endl;
+        cout << "    " << argv[0] << " -c Algorithm_1 Algorithm_2 Input_file" << endl;
+        cout << "    " << argv[0] << " -c Algorithm_1 Algorithm_2 Input_size Input_order" << endl;
+        cout << "OPTION:\n";
+        cout << "    -mode               -a algorithm mode, -c comparison mode\n";
+        cout << "    Algorithm           selection - sort, insertion - sort,...\n";
+        cout << "    Input_file          path to user - provided data, with format :\n";
+        cout << "                        1 st line: integer n (number of elements)\n";
+        cout << "                        2 nd line: n integers, separated by a single space\n";
+        cout << "    Input_size          generated data with specified size, Integer (<= 1,000,000)\n";
+        cout << "    Input_order         generated data with order : -sorted, -nsorted, -rev, -rand\n";
+        cout << "    Output_parameter    -time or -comp or -both\n";
+        return 0;
+    }
 
     string mode = argv[1];
 
     if (mode == "-a") {
         string algorithm = argv[2];
+        string next = argv[3];
 
-        if (argc == 5) {
-            string inputFile = argv[3];
-            int* a, n;
+        if (next.find('.') != string::npos || next.find('/') != string::npos) {
+            string inputFile = next;
+            string outputParam = argv[4];
+            command1(algorithm, inputFile, outputParam);
+        } else {
+            int size = stoi(next);
+            string next2 = argv[4];
 
-            ReadInput(inputFile, a, n);
-            auto [runtime, comparisons] = Sort(a, n, algorithm);
-            WriteOutput("output.txt", a, n);
-
-            cout << "ALGORITHM MODE" << endl;
-            cout << "Algorithm: " << algorithm << endl;
-            cout << "Input file: " << inputFile << endl;
-            cout << "Input size: " << n << endl;
-
-            string param = argv[4];
-            cout << "-------------------------" << endl;
-            if (param == "-both") {
-                cout << "Running time: " << runtime << " ms" << endl;
-                cout << "Comparisions: " << comparisons << endl;
+            if (next2 == "-sorted" || next2 == "-nsorted" || next2 == "-rev" || next2 == "-rand") {
+                string order = next2;
+                string outputParam = argv[5];
+                command2(algorithm, size, order, outputParam);
+            } else {
+                string outputParam = next2;
+                command3(algorithm, size, outputParam);
             }
-            else if (param == "-time") {
-                cout << "Running time: " << runtime << " ms" << endl;
-            }
-            else if (param == "-comp") {
-                cout << "Comparisions: " << comparisons << endl;
-            }
-            delete[] a;
         }
-        else if (argc == 6) {
-            int n = stoi(argv[3]);
-            int* a = new int[n];
+    } else if (mode == "-c") {
+        string algorithm1 = argv[2];
+        string algorithm2 = argv[3];
+        string next = argv[4];
 
-            string gen = argv[4];
-
-            if (gen == "-rand") {
-                GenerateData(a, n, 0);
-            }
-            else if (gen == "-nsorted") {
-                GenerateData(a, n, 3);
-            }
-            else if (gen == "-sorted") {
-                GenerateData(a, n, 1);
-
-            }
-            else if (gen == "-rev") {
-                GenerateData(a, n, 2);
-            }
-
-            WriteOutput("input.txt", a, n);
-            auto [runtime, comparisons] = Sort(a, n, algorithm);
-            WriteOutput("output.txt", a, n);
-
-            cout << "ALGORITHM MODE" << endl;
-            cout << "Algorithm: " << algorithm << endl;
-            cout << "Input size: " << n << endl;
-            cout << "Input order: " << gen << endl;
-
-            string param = argv[5];
-            cout << "-------------------------" << endl;
-            if (param == "-both") {
-                cout << "Running time: " << runtime << " ms" << endl;
-                cout << "Comparisions: " << comparisons << endl;
-            }
-            else if (param == "-time") {
-                cout << "Running time: " << runtime << " ms" << endl;
-            }
-            else if (param == "-comp") {
-                cout << "Comparisions: " << comparisons << endl;
-            }
-            delete[] a;
+        if (next.find('.') != string::npos || next.find('/') != string::npos) {
+            string inputFile = next;
+            command4(algorithm1, algorithm2, inputFile);
+        } else {
+            int size = stoi(next);
+            string order = argv[5];
+            command5(algorithm1, algorithm2, size, order);
         }
-        else 
-            return 1;
     }
+
     return 0;
 }
 
