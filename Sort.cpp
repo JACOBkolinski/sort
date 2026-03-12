@@ -667,6 +667,7 @@ int main(int argc, char const *argv[]) {
         cout << "    " << argv[0] << " -a Algorithm Input_size Output_parameter" << endl;
         cout << "    " << argv[0] << " -c Algorithm_1 Algorithm_2 Input_file" << endl;
         cout << "    " << argv[0] << " -c Algorithm_1 Algorithm_2 Input_size Input_order" << endl;
+        cout << "\n";
         cout << "OPTION:\n";
         cout << "    -mode               -a algorithm mode, -c comparison mode\n";
         cout << "    Algorithm           selection - sort, insertion - sort,...\n";

@@ -8,18 +8,27 @@ Sorting is a fundamental concept in computer science and is widely used in tasks
 2. [Installation](#installation)
 3. [Execution](#execution)
 4. [Troubleshoot](#troubleshoot)
-5. [Contribution](#Contribution)
+5. [Contribution](#contribution)
 
 ## Introduction
 
 ## Installation
+
+### Release
+
+You can download our execution file in Github Release and run it by using [execution](#execution)
+
+### Manual
+
+## Execution
 ```
 USAGE:
-    ./Sort.exe -a Algorithm Input_file Output_parameter
-    ./Sort.exe -a Algorithm Input_size Input_order Output_parameter
-    ./Sort.exe -a Algorithm Input_size Output_parameter
-    ./Sort.exe -c Algorithm_1 Algorithm_2 Input_file
-    ./Sort.exe -c Algorithm_1 Algorithm_2 Input_size Input_order
+    Sort.exe -a Algorithm Input_file Output_parameter
+    Sort.exe -a Algorithm Input_size Input_order Output_parameter
+    Sort.exe -a Algorithm Input_size Output_parameter
+    Sort.exe -c Algorithm_1 Algorithm_2 Input_file
+    Sort.exe -c Algorithm_1 Algorithm_2 Input_size Input_order
+    
 OPTION:
     -mode               -a algorithm mode, -c comparison mode
     Algorithm           selection - sort, insertion - sort,...
@@ -28,12 +37,11 @@ OPTION:
                         2 nd line: n integers, separated by a single space
     Input_size          generated data with specified size, Integer (<= 1,000,000)
     Input_order         generated data with order : -sorted, -nsorted, -rev, -rand
-    Output_parameter    -time or -comp or -both
+    Output_parameter    -time, -comp or -both
 ```
 
-## Execution
-
-
+> [!IMPORTANT]
+> Usage is for random pedestrian only. For lecturers and testers, please recompile the program, choose either the correct version or use the version provided by student according to the previously agreed convention.
 
 ## Troubleshoot
 
